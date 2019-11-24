@@ -1,0 +1,18 @@
+.contador{
+    width: 200px;
+    height: 200px;
+    background-color: rosybrown;
+}
+
+.contador p{
+    font-size: 120px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 25px;
+    text-align: center;
+    color:white;
+}
+
+.contador button{
+    width: 100%;
+}

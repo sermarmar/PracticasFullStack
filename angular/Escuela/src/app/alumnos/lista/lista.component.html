@@ -1,0 +1,22 @@
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Mail</th>
+        <th>Activo</th>
+        <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let alumno of arrAlumnos">
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.apellidos}}</td>
+        <td>{{alumno.edad}}</td>
+        <td>{{alumno.mail}}</td>
+        <td>{{alumno.activo}}</td>
+        <td>
+            <button class="btn btn-info" (click)="manejarClickVer(alumno)">Ver</button>
+            <button class="btn btn-warning" [routerLink]="['/alumnos', 'edit', alumno._id]">Editar</button>
+            <button class="btn btn-danger" (click)="manejarClickBorrar(alumno)">Borrar</button>
+        </td>
+    </tr>
+</table>

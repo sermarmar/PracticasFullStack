@@ -1,0 +1,50 @@
+extends layout.pug
+
+mixin listado(arr)
+    ul 
+        each item in arr
+            li= item
+
+block contenido
+    h2 Cabecera de ejemplo
+    div#principal.rojo.negrita
+        p Párrafo 1
+        p Párrafo 2
+    a(href='http://www.google.com', title='Google', id='enlaceGoogle') Google.com
+    .segundo
+        p Párrafo
+    .tercero
+        p= nombre
+        p Mi nombre es #{nombre}
+    .cuarto
+        case numProductos
+            when 0
+                p No tienes productos
+            when 1
+                p Tienes un producto
+            default
+                p Tienes #{numProductos} productos
+    .quinto
+        //Comentarios HTML
+        //-Comnetarios Ocultos
+        ul
+            - for(var i = 0; i<animales.length; i++)
+                li= animales[i].toUpperCase()
+    .sexto
+        ul
+            each animal in animales
+                li= animal
+            else 
+                li No hay animales
+    .septimo
+        ul 
+            each estu, index in estudiantes
+                li #{index+1} #{estu.nombre} #{estu.apellidos}
+    .octavo
+        +listado(['uno', 'dos'])
+        +listado(animales)
+        +listado([1,2,3,4,5,6])
+        | Hola Mundo
+
+block piePagina
+    p Copyright @ Sergio Martín

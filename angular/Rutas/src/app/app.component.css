@@ -1,0 +1,9 @@
+.activa{
+    color:white;
+    background-color: lightgreen;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+li{
+    margin:25px;
+}

@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 let files = fs.readdirSync('.');
-console.log(fs);
+//console.log(fs);
 console.log(files);
 
 fs.readdir('.', (err, files) => {

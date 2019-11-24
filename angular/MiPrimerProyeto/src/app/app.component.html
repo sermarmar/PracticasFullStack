@@ -1,0 +1,15 @@
+<div>
+    <input type="text" [(ngModel)]="campoText">
+    <p>{{campoText}}</p>
+</div>
+
+<h2>Hola Mundo!!</h2>
+<app-saludo></app-saludo>
+<!--<app-contador numero="7"></app-contador>
+<app-contador></app-contador>
+<app-contador numero="14"></app-contador>-->
+<app-contador [numero]="arrNums[0]" (cuentaTerminada)="termina($event)"></app-contador>
+<app-contador [numero]="arrNums[1]"></app-contador>
+<app-contador [numero]="arrNums[2]"></app-contador>
+<!--<app-contador *ngFor="let seg of arrNums" [numero]="seg" (cuentaTerminada)="termina($event)"></app-contador>-->
+<app-suma [num1]="3" [num2]=4 (sumaTerminada)="finSuma($event)"></app-suma>

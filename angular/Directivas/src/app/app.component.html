@@ -1,0 +1,31 @@
+<select (change)="seleccionarColor($event)">
+  <option value="red">Rojo</option>
+  <option value="green">Verde</option>
+  <option value="blue">Azul</option>
+  <option value="white">Blanco</option>
+</select>
+
+<div>
+  <input type="text" [(ngModel)]="parrafoStyle.color">
+</div>
+
+<div [ngStyle]="parrafoStyle">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolores sed, itaque odit
+  totam laboriosam sequi
+  reiciendis facere? Maiores quasi non ex quas veritatis. Alias commodi corrupti unde amet recusandae?
+</div>
+
+
+<div class="semaforo" [ngClass]="{rojo: (color === 'rojo'), verde:(color === 'verde'), ambar:(color === 'ambar')}">
+</div>
+
+<button (click)="mostrar = !mostrar">Aparecer</button>
+<div *ngIf="mostrar" appSubrayado>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi pariatur,
+  consequuntur quos
+  nisi veritatis magnam esse itaque delectus! Nisi accusamus laudantium illum eius, veniam voluptatum odio quaerat eos
+  quo.</div>
+<div *ngIf="!mostrar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit enim consequuntur doloribus
+  officiis facilis deserunt nisi explicabo. Deserunt ducimus voluptatem molestias rerum. Consequuntur quis deserunt
+  fugiat, harum cum quia soluta.</div>
+
+<app-bucle> </app-bucle>

@@ -1,0 +1,23 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="" class="form-control" formControlName="nombre">
+    </div>
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" name="" class="form-control" formControlName="apellidos">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="" class="form-control" formControlName="mail">
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" name="" class="form-control" formControlName="edad">
+    </div>
+    <div class="form-group">
+        <label>Activo</label>
+        <input type="checkbox" name="" class="form-control" formControlName="activo">
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-block btn-outline-info" [@botonLoco]="estadoBoton">
+</form>

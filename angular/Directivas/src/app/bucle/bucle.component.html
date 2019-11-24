@@ -1,0 +1,28 @@
+<ul>
+    <li *ngFor="let episodio of episodios">
+        {{episodio.title}} -- Director {{episodio.director}}
+    </li>
+</ul>
+
+<table>
+    <tr>
+        <th>#ID</th>
+        <th>Título</th>
+        <th>Director</th>
+    </tr>
+    <tr *ngFor="let episodio of episodios; let indice = index; let par = even; 
+    let impar = odd; let primero = first; let ultimo = last;" [ngClass]="{filaPar:par, filaImpar: impar}">
+        <td>{{indice}}</td>
+        <td>{{episodio.title}}</td>
+        <td>{{episodio.director}}</td>
+        <td>{{par}} {{impar}} {{primero}} {{ultimo}}</td>
+    </tr>
+</table>
+
+<div [ngSwitch]="pais">
+    <p *ngSwitchCase="'españa'">España</p>
+    <p *ngSwitchCase="'andorra'">Andorra</p>
+    <p *ngSwitchCase="'turquia'">Turquía</p>
+    <p *ngSwitchCase="'sanmarino'">San Marino</p>
+    <p *ngSwitchDefault>No existe el país</p>
+</div>

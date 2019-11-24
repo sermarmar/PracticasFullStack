@@ -1,0 +1,44 @@
+<form class="mt-5 mb-5" novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        <p *ngIf="formulario.controls.nombre.errors && formulario.controls.nombre.touched">
+            El campo nombre es requerido
+        </p>
+    </div>
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+        <p *ngIf="formulario.controls.apellidos.errors?.required && formulario.controls.apellidos.touched">
+            El campo apellidos es requerido
+        </p>
+        <p *ngIf="formulario.controls.apellidos.errors?.maxlength && formulario.controls.apellidos.dirty">
+            Máximo de {{formulario.controls.apellidos.errors.maxlength.requiredLength}} carácteres y ahora tienes
+            {{formulario.controls.apellidos.errors.maxlength.actualLength}}
+        </p>
+    </div>
+    <div class=" form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label>Direccion</label>
+        <input type="text" class="form-control" formControlName="direccion"></div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" class="form-control" formControlName="edad">
+        <p *ngIf="formulario.controls.edad.errors?.edadValidator && formulario.controls.edad.touched">
+            {{formulario.controls.edad.errors?.edadValidator}}
+        </p>
+    </div>
+    <div class="form-group">
+        <label>DNI</label>
+        <input type="text" class="form-control" formControlName="dni">
+    </div>
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input type="text" class="form-control" formControlName="password">
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-block btn-outline-info" [disabled]="formulario.invalid">
+
+</form>

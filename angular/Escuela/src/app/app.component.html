@@ -1,0 +1,13 @@
+<!--<ul>
+  <li *ngFor="let planet of arrPlanetas">
+    {{ planet.name }}
+  </li>
+</ul>
+
+<div>
+  <button (click)="cambioPagina(false)" [disabled]="numPage === 1">Anterior</button>
+  <button (click)="cambioPagina(true)" [disabled]="numPage === pageCount">Siguiente</button>
+</div>-->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
